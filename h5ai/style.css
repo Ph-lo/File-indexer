@@ -1,0 +1,226 @@
+body {
+    background-color: black;
+    color: #b1d1eb;
+    font-family: Ubuntu;
+}
+#mainContainer {
+    display: flex;
+}
+#contentContainer {
+    background-color: #2c2c2c85;
+    border: 1px solid rgba(71, 71, 71, 0.623);
+    height: 100%;
+    max-height: 890px;
+    width: 80%;
+    margin: 15px 0 0 15px;
+}
+#treeDiv {
+    border-right: 1px solid rgb(71, 71, 71);
+    height: 890px;
+    max-height: 850px;
+    width: 20%;
+    padding-right: 15px;
+    padding-top: 25px;
+    padding-left: 15px;
+    overflow-y: scroll;
+    scrollbar-color: rgba(71, 71, 71, 0.623) black;
+}
+.folderUl {
+    border-left: 1px solid rgba(71, 71, 71, 0.897);
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-left: -25px;
+    padding-left: 50px;
+}
+#ul0 {
+    margin-left: -20px;
+}
+.folders {
+    color: #b1d1eb;
+    text-decoration: none;
+}
+.files {
+    color: #b1d1eb;
+    text-decoration: none;
+}
+#folderName {
+    margin-bottom: 0px;
+    border-bottom: 1px solid rgba(71, 71, 71, 0.623);
+    padding: 0 30px 15px 15px;
+    display: flex;
+    justify-content: space-between;
+}
+#a-folder {
+    width: 15%;
+}
+#full-path {
+    background-color: #171717;
+    color: #b1d1eb;
+    font-size: 14px;
+    border: none;
+    width: 70%;
+    height: 25px;
+    text-align: center;
+    overflow: scroll;
+}
+#image-p {
+    margin: 0;
+    padding-top: 3px;
+}
+#folderName img {
+    margin-right: 6px;
+}
+.headerDiv {
+    color: #b1d1eb83;
+    font-size: 18px;
+    background-color: #202020;
+    border-top: 1px solid rgba(71, 71, 71, 0.623);
+    border-bottom: 1px solid rgba(71, 71, 71, 0.623);
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px 15px 30px;
+}
+.folderIcon {
+    list-style: url("../assets/empty-folder.png");
+}
+.hiddenElems {
+    list-style: url("../assets/blank-page.png");
+}
+#contentDiv {
+    height: 100%;
+    max-height: 700px;
+    overflow-y: scroll;
+    scrollbar-color: rgba(71, 71, 71, 0.623) #171717;
+}
+.liDiv {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 8px;
+    padding-left: 40px;
+}
+.rightLi {
+    width: 33%;
+}
+#name {
+    width: 33%;
+
+}
+#lastModif {
+    width: 100%;
+    text-align: center;
+}
+#size {
+    width: 15%;
+    text-align: right;
+}
+.lastModified {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+#back-icon {
+    margin-bottom: -0.5em;
+}
+.fileSize {
+    margin: 10px 15px 0 0;
+    width: 15%;
+    text-align: right;
+}
+.fillCell {
+    width: 15%;
+    margin-right: 15px;
+}
+.separator {
+    margin-left: -40px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: rgba(71, 71, 71, 0.623);
+}
+
+#fileInput {
+    display: none;
+}
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: auto;
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0, 0, 0, 0.952); /* Black w/ opacity */
+  }
+  
+ 
+.modal-content {
+    position: relative;
+    background-color: #2c2c2ccc;
+    margin: auto;
+    /* padding: 0; */
+    border: 1px solid #202020;
+    width: 80%;
+    
+    /* box-shadow: 0 4px 8px 0 rgba(83, 83, 83, 0.2),0 6px 20px 0 rgba(94, 94, 94, 0.19); */
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+  
+
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+  
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+  
+
+#close {
+    color: aliceblue;
+    float: right;
+    margin-right: 5px;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+#close:hover,
+#close:focus {
+    color: rgb(53, 52, 52);
+    text-decoration: none;
+    cursor: pointer;
+}
+  
+.modal-header {
+    padding: 2px 16px;
+    text-align: center;
+    background-color: #202020;
+    color: #b1d1eb;
+}
+  
+#modal-body {
+    padding: 2px 16px;
+    /* height: 800px; */
+    /* overflow: hidden; */
+    /* overflow-y: scroll; */
+    word-wrap: break-word;
+    height: 700px;
+    overflow: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none; 
+}
+ 
+#modal-body img {
+    margin-top: 75px;
+}
+
+.imageDiv {
+    text-align: center;
+}
