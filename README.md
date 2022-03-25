@@ -8,7 +8,7 @@ Tree view / file directory listing
 
 Copy the h5ai/ folder in the document root directory of your web server
 
-Note : To preview php script content as text on click, you will need to create / modify the .htaccess in
+Note : To preview php script content as text, you will need to create / modify the .htaccess in
 your web server's root directory and add :
 ```.htaccess
 php_flag engine off
