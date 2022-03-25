@@ -2,7 +2,7 @@
 
 Tree view / file directory listing
 
-![alt text](https://github.com/EpitechWebAcademiePromo2023/W-PHP-501-STG-1-1-myh5ai-philippe.locatelli/blob/master/view.png)
+![alt text](https://github.com/Ph-lo/File-indexer/blob/main/view.png)
 
 ## Installation 
 
