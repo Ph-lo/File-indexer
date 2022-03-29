@@ -182,7 +182,11 @@ body {
     to {top:0; opacity:1}
 }
   
-
+.phpFile-div {
+    width: 80%;
+    margin: 250px auto auto auto;
+    text-align: center;
+}
 #close {
     color: aliceblue;
     float: right;
