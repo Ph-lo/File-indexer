@@ -80,19 +80,28 @@ window.onload = () => {
     }
 
     function clickOnFile(e) { 
-        e.preventDefault();
+        if (!$(this).attr('href').includes('index.php')) {
+            e.preventDefault();
+        }
         const fileTemp = $(this).attr('href');
         const file = fileTemp.replace("/var/www/html", "");
         const fileName = file.split('/').reverse()[0];
         $('#modal-body').html('');
         
         $('#modal-title').text(fileName);
-        
+     
         if (file.includes('.png') || file.includes('.jpg') || file.includes('.jpeg')) {
             const imageDiv = $('<div></div>').addClass('imageDiv');
             const image = '<img src="'+ file +'" alt="'+ fileName +' content" />';
             imageDiv.append(image);
             $('#modal-body').append(imageDiv);
+        } else if (file.includes('.php')) {
+            const phpFile = $('<div></div>').addClass('phpFile-div');
+            const phpText = 'This file contains PHP script';
+            phpFile.append(phpText);
+            $('#modal-body').append(phpFile);
+            // clickOnFolder(e);
+            // return;
         } else {
             $.ajax(file, {
                 success: function(response) {
@@ -107,6 +116,20 @@ window.onload = () => {
         } 
         $('#modal').toggle();
     }
+
+    function previousPage(e) {
+        e.preventDefault();
+        // console.log(count);
+        if (previousParent[count]) {
+            $('#contentContainer').html('');
+            $('#contentContainer').html(previousParent[count]);
+            currentFolder = '';
+            previousParent.splice(count, 1);
+            count = previousParent.length-1;
+            // console.log(previousParent);
+        }
+    }
+
     $('#close').on('click', function() { 
         $('#modal').toggle();
     });
@@ -125,16 +148,7 @@ window.onload = () => {
 
     $('#contentContainer').on('click', '#copy-btn', copyPath);
 
-    $('#contentContainer').on('click', '#back-icon',function(e) {
-        e.preventDefault();
-        // console.log(count);
-        if (previousParent[count]) {
-            $('#contentContainer').html('');
-            $('#contentContainer').html(previousParent[count]);
-            currentFolder = '';
-            previousParent.splice(count, 1);
-            count = previousParent.length-1;
-            // console.log(previousParent);
-        }
-    });
+    $('#contentContainer').on('click', '#back-icon', previousPage);
+    
+    $('#contentContainer').on('click', '#a-folder', previousPage);
 }
