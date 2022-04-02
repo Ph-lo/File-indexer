@@ -51,7 +51,7 @@ class H5AI {
                 $this->printTree($branch);
             } else {
                 $b = explode('--', $branch);
-                echo '<li class="hiddenElems" data-date="'.$b[1].'" data-size="'.$b[2].'" ><a class="files" href="'. $b[0] .'">'.$key.'</a></li>';
+                echo '<li class="hiddenElems" data-date="'.$b[1].'" data-size="'.$b[2].'" ><a class="files" href="'. str_replace("var/www/html/", "", $b[0]) .'">'.$key.'</a></li>';
             }
             echo '</li>';
         }
