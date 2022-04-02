@@ -1,0 +1,5 @@
+RewriteEngine on
+RewriteCond %{REQUEST_URI} !^/h5ai/index.php$
+RewriteRule . /h5ai/index.php [L]
+
+php_flag engine on
